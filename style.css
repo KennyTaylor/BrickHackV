@@ -1,3 +1,40 @@
 body {
     background-color: #F98728;
 }
+
+#nameBox {
+    border-radius: 10px 5px 5px 10px;
+    background: #F98728;
+    padding: 10px;
+    color: white;
+}
+
+#statBox {
+    border-radius: 5px 10px 10px 5px;
+    padding: 10px;
+    background: #1B2733;
+    color: white;
+}
+
+#nameHeader {
+    border-radius: 10px 5px 5px 5px;
+    background: #F98728;
+    padding: 10px;
+    color: white;
+}
+
+#statHeader {
+    border-radius: 5px 10px 5px 5px;
+    padding: 10px;
+    background: #1B2733;
+    color: white;
+}
+
+#surround {
+    border-radius: 2em;
+    background: #FFF;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid black
+}
