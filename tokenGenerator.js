@@ -18,41 +18,48 @@ function main() {
         ACTIVATED: 1,
         DEACTIVATED: 2
     };
-
+    // testHashes();
     generateHashes();
 
+    function testHashes(){
+        var string1 = new String("Hey");
+        var string2 = new String("123");
+        var string3 = new String("hey");
+        var string4 = new String("hey");
+
+        console.log("Hash function test set\n");
+        console.log(string1.hashCode != string2.hashCode);
+        console.log(string3.hashCode == string4 + " Strings equate" + string3.hashCode + " " + string4.hashCode);
+        console.log(string2.hashCode + " Numerical hashcode");
+    }
     function generateHashes() {
 
         var counter = 0;
         var types = Array("SVK", "CRN", "WDD");
-        for (var i = 0; i < 3; i++) {
-            for (var j = 0; j < 3; j++) {
-                tokens[counter] = j + types[i] + Math.random(1000, 5000);
+        for (var i = 0; i < types.length; i++) {
+            for (var j = 0; j < 10; j++) {
+                tokens[counter] = counter.toString(16)+ "["+ types[i]+"]" +  Math.random(1000,5000).toString(16);
                 console.log(tokens[counter]);
+                counter++;
             }
         }
+        return tokens;
 
     }
-
     //Call Hashcode on String { str.hashCode() }
-    String.prototype.hashCode = function () {
-        var hash = 5381, i = this.length;
-        while (i)
-            hash = (hash * 33) ^ this.charCodeAt(--i)
-        return hash >>> 0;
-    }
+    // String.prototype.hashCode = function() {
+    //     var hash = 0;
+    //     //Hash for nothing == 0
+    //     if (this.length == 0) return hash;
+    //     for (i = 0; i < this.length; i++) {
+    //         char = this.charCodeAt(i);
+    //         hash = ((hash<<5)-hash)+char;
+    //         hash = hash & hash; // Convert to 32bit integer
+    //     }
+    //     return hash;
+    // }
 
-    /**
-     * Params a key to be returned as a hash
-     *
-     * @param the_key
-     * @returns {string}
-     */
-    function hashCode(the_key) {
-        return the_key.charAt(0);
-    }
 };
-
 main();
 //Tester function that popullates the array
 
