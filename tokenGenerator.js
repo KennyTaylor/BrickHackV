@@ -6,6 +6,10 @@
  * @type {any[]}
  */
 
+
+
+
+
 //Acts as "outside" DB
 var tokens = new Array();
 var dictionary = new Map();
@@ -36,11 +40,10 @@ var dictionary = new Map();
         var counter = 0;
         var types = Array("SVK");//, "CRN", "WDD");
         for (var i = 0; i < types.length; i++) {
-            for (var j = 0; j < 1; j++) {
-                tokens[counter] = counter.toString(16)+ "["+ types[i]+"]" +  (Math.floor(Math.random()*4000)+1000).toString(16);
+            for (var j = 0; j < 4; j++) {
+                tokens[counter] = types[i] +  (Math.floor(Math.random()*1000000)+1000).toString(16);
                 console.log(tokens[counter]);
                 counter++;
-                console.log("random");
             }
         }
         return tokens;
@@ -67,5 +70,13 @@ var dictionary = new Map();
         }
     }
 
+var tokenStuff = new Map();
+function tokenDict(n){
+    for(var i = 1000; i<n;i++){
+        var tempToken = i.toString();
+        tokenStuff.set(tempToken,null);
+    }
 
-
+}
+tokenDict(1030);
+console.log(tokenStuff.entries());
