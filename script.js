@@ -10,13 +10,13 @@ db.transaction(function(tx) {
 
 var insert = function(token,user){
     db.transaction(function(tx){
-        tx.executeSql("INSERT INTO bois (token,user) VALUES (?)", [user]);
+        tx.executeSql("INSERT INTO bois (token,user) VALUES (?,?)", [token,user]);
     });
 }
 
 var delyeet = function(){
     db.transaction(function(tx){
-        tx.executeSql("DROP TABLE bois");
+        tx.executeSql("DROP TABLE bois") // obligatory epic games reference
     });
 }
 //delyeet(); // Good ol' johnny tables;--
