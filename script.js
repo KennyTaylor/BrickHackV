@@ -66,7 +66,7 @@ for(var i = 0; i < boyenames.length;i++) {
 
 
 }
-bois[0].products = ["SVK1","SVK2"]; // replacing a database access assuming we get the api set up
+bois[0].products = ["SVK1","SVK2","WDD7","WDD8"]; // replacing a database access assuming we get the api set up
 bois[1].products = ["WDD1","SVK3","SVK4","SVK11"];
 bois[2].products = ["SVK5","WDD2"];
 bois[3].products = ["SVK6"];
