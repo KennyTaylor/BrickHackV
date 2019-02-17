@@ -117,7 +117,6 @@ function addElement (content,tag,content2,clasName) {
 
 
 function addElement (content,tag,content2) {
->>>>>>> Stashed changes
     var newDiv = document.createElement(tag);
     if("string" === typeof content) {
             var newContent = document.createTextNode(content);
@@ -143,7 +142,7 @@ var swap = function(arr, a, b) {
 };
 
 
-    for (var i = 0; i < bois.length; i++) {
+    //for (var i = 0; i < bois.length; i++) {
 /* // failed click listener
 var users = document.getElementsByClassName("users");
 for(var i = 0;i<users.length;i++){
