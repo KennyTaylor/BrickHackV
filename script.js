@@ -1,5 +1,3 @@
-
-
 const randomNumber = 4; // pseudorandom dice roll 1-6
 const e = 3; // euler's constant
 
@@ -45,7 +43,9 @@ var boyenames = [
     "H.P. Lovecraft",
     "Prince Humperdinck",
     "Elongated Muskrat",
-    "Temika Tatom",
+    "Temika Tatom"];
+
+/*
     "Gayla Gammage",
     "Wilfred Westberry",
     "James Jost",
@@ -53,7 +53,7 @@ var boyenames = [
     "Geri Gerry",
     "Abigail Averitt"
 ];
-
+*/
 
 
 var bois = [];
@@ -84,6 +84,7 @@ bois[13].products = ["SVK10"];
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
     for (var i = 0; i < bois[userNum].products.length; i++) {
+        console.log(userNum);
         addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement(bois[userNum].products[i],"p"),"users-data"),"div");
         //addElement(addElement(users[userNum].products[i],"p"),"div");
 
@@ -94,7 +95,7 @@ function scoringBois(userNum) {
     var marijuanaSkore = 0;
     var alcoholScore = "";
     var marijuanaScore = "";
-    for(var i = 0;i < bois[userNum].products.length;i++){
+    for(var i = 0;i < bois[userNum].products.length; i++){
         if(bois[userNum].products[i].substring(0,1) === "W"){
             marijuanaSkore++;
         }
@@ -135,6 +136,22 @@ function addElement (content,tag,content2,clasName) {
     return newDiv;
 }
 
+var users = document.getElementsByClassName("users");
+for(var i = 0;i<users.length;i++){
+    users[i].addEventListener('click', function(){console.log("click")}
+        //tokensToHumanReadableAlsoDocumentObjectShit(i)
+    );
+}
 
 
+/*
+$(function() {
+    var users = document.getElementsByClassName('div.users');
+    $("div.users").each(users,function(index){
+        this.on("click", function(){
+            console.log("Click");
+            tokensToHumanReadableAlsoDocumentObjectShit(index);
+        });
+    });
+});*/
 //parseTokens(boi.products);
