@@ -3,6 +3,8 @@
 const randomNumber = 4; // pseudorandom dice roll 1-6
 const e = 3; // euler's constant
 
+
+/*
 var db = openDatabase("my.db", "1.0","Database time",100);
 db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS bois (token string primary key, user text)");
@@ -11,6 +13,7 @@ db.transaction(function(tx) {
 var insert = function(token,user){
     db.transaction(function(tx){
         tx.executeSql("INSERT INTO bois (token,user) VALUES (?,?)", [token,user]);
+
     });
 }
 
@@ -20,7 +23,7 @@ var delyeet = function(){
     });
 }
 //delyeet(); // Good ol' johnny tables;--
-
+*/
 class User{
     constructor(products, name) {
         this.products = products;
@@ -55,27 +58,52 @@ var boyenames = [
 
 var bois = [];
 // getting the bois ready
-for(var i = 0; i < boyenames.length;i++){
+for(var i = 0; i < boyenames.length;i++) {
     bois[i] = new User(new Array(), boyenames[i]);
-    insert("string",bois[i].name); // mySQL magic happens here
+    //insert("string",bois[i].name); // mySQL magic happens here
 
 }
 bois[0].products = ["SVK1","SVK2"]; // replacing a database access assuming we get the api set up
-bois[1].products = ["SVK3","SVK4","SVK5"];
-
+bois[1].products = ["WDD1","SVK3","SVK4","SVK11"];
+bois[2].products = ["SVK5","WDD2"];
+bois[3].products = ["SVK6"];
+bois[4].products = ["SVK7","SVK8"];
+bois[5].products = ["SVK9","WDD3"];
+bois[6].products = ["SVK9"];
+bois[7].products = ["SVK10"];
+bois[8].products = ["SVK8"];
+bois[9].products = ["SVK9"];
+bois[10].products = ["SVK10"];
+bois[11].products = ["SVK8"];
+bois[12].products = ["SVK9"];
+bois[13].products = ["SVK10"];
 
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
-
-
     for (var i = 0; i < bois[userNum].products.length; i++) {
         addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement(bois[userNum].products[i],"p")),"div");
         //addElement(addElement(users[userNum].products[i],"p"),"div");
+
     }
 }
 
 function scoringBois(userNum) {
-    addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcoholism Score: "+(bois[userNum].products.length.toString()),"p")),"div");
+    var marijuanaSkore = 0;
+    var alcoholScore = "";
+    var marijuanaScore = "";
+    for(var i = 0;i < bois[userNum].products.length;i++){
+        if(bois[userNum].products[i].substring(0,1) === "W"){
+            marijuanaSkore++;
+        }
+    }
+    for(var i = 0;i<marijuanaSkore;i++){
+        marijuanaScore=marijuanaScore+"🍁";
+
+    }
+    for(var i=0;i<bois[userNum].products.length;i++){
+        alcoholScore=alcoholScore+"🍺";
+    }
+    addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcohol Score: "+alcoholScore+"  Weed Score: "+marijuanaScore,"p")),"div");
 
 }
 
@@ -104,9 +132,9 @@ function addElement (content,tag,content2) {
     return newDiv;
 }
 
-for(var i=0;i<boyenames.length;i++) {
-    //scoringBois(i);
-    tokensToHumanReadableAlsoDocumentObjectShit(i);
+for(var i=0;i<bois.length;i++) {
+    scoringBois(i);
+    //tokensToHumanReadableAlsoDocumentObjectShit(i);
 }
 //tokensToHumanReadableAlsoDocumentObjectShit(1);
 //parseTokens(boi.products);
