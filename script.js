@@ -135,9 +135,6 @@ function addElement (content,tag,content2,clasName) {
     return newDiv;
 }
 
-for(var i=0;i<bois.length;i++) {
-    scoringBois(i);
-    //tokensToHumanReadableAlsoDocumentObjectShit(i);
-}
-//tokensToHumanReadableAlsoDocumentObjectShit(1);
+
+
 //parseTokens(boi.products);
