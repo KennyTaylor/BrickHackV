@@ -84,7 +84,7 @@ bois[13].products = ["SVK10"];
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
     for (var i = 0; i < bois[userNum].products.length; i++) {
-        addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement(bois[userNum].products[i],"p")),"div");
+        addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement(bois[userNum].products[i],"p"),"users-data"),"div");
         //addElement(addElement(users[userNum].products[i],"p"),"div");
 
     }
@@ -106,12 +106,12 @@ function scoringBois(userNum) {
     for(var i=0;i<bois[userNum].products.length;i++){
         alcoholScore=alcoholScore+"🍺";
     }
-    addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcohol Score: "+alcoholScore+"  Weed Score: "+marijuanaScore,"p")),"div");
+    addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcohol: "+alcoholScore+"  Weed: "+marijuanaScore,"p")),"div");
 
 }
 
 //stolen (ish) code from mozilla developer thing
-function addElement (content,tag,content2) {
+function addElement (content,tag,content2,clasName) {
     // create a new div element
     var newDiv = document.createElement(tag);
     // and give it some content
@@ -125,10 +125,10 @@ function addElement (content,tag,content2) {
             newDiv.appendChild(content2);
         }
     }
-    if("div"===tag) {
-        newDiv.className = "users";
-        var currentDiv = document.getElementsByClassName("elements");
-        currentDiv[0].appendChild(newDiv);
+    if(tag === "div") {
+            newDiv.className = "users";
+            var currentDiv = document.getElementsByClassName("elements");
+            currentDiv[0].appendChild(newDiv);
     }
     // add the newly created element and its content into the DOM
 
