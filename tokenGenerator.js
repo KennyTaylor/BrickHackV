@@ -44,19 +44,26 @@ var dictionary = new Map();
         return tokens;
 
     }
-    //Call Hashcode on String { str.hashCode() }
-    // String.prototype.hashCode = function() {
-    //     var hash = 0;
-    //     //Hash for nothing == 0
-    //     if (this.length == 0) return hash;
-    //     for (i = 0; i < this.length; i++) {
-    //         char = this.charCodeAt(i);
-    //         hash = ((hash<<5)-hash)+char;
-    //         hash = hash & hash; // Convert to 32bit integer
-    //     }
-    //     return hash;
-    // }
 
-//Tester function that popullates the array
+
+    //Parse the Tokens
+    class Product{
+        constructor(brand,price, type){
+            this.brand = brand;
+            this.type = type;
+            this.price = price;
+        }
+    }
+    function parseTokens(the_tokens){
+        var tokes = the_tokens; //Returns an array
+
+        for (var i = 0; i < tokes.length; i++){
+            var numberOfProduct = tokes.slice(0,1);
+            var TypeOfProduct = tokes.slice(tokes.indexOf('['), tokes.indexOf(']'));
+            console.log(numberOfProduct, TypeOfProduct);
+            //new Product()
+        }
+    }
+
 
 

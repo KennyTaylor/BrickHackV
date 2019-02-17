@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>The App</title>
+    <script src="tokenGenerator.js"></script>
 </head>
 <style>
+    div.page-content { height: max-content; }
     div.elements{
-        width: 100%;
-        margin: 0;
-        padding:0;
-        background-color: #a23;
+        height: 100%;
+        background-color: #d4d4d4;
         border-radius: 5px;
+        margin: 0;
+    }
+    div.users{
+        margin: 40px 0 0 0;
+        background-color:#a23;
     }
     .users div{
         background-color: #F98728;
         border-radius: 300px;
         text-align: center;
-        padding: 2em 2em;
         margin: 10%;
-        height: 40px;
+        padding: 2em 0;
+        height: 2em;
 
     }
     div.users p{
@@ -41,6 +46,7 @@
             <!--Users name-->
             <div class="users">
                     <h1>Summary of {User}</h1>
+
                     <div>
                         <p>Ben Shapiro</p>
                         <p>234k2nj34234n</p>

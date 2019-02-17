@@ -52,4 +52,5 @@ function addElement (content,tag,content2) {
 
 tokensToHumanReadableAlsoDocumentObjectShit(1);
 tokensToHumanReadableAlsoDocumentObjectShit(0);
+parseTokens(boi.products);
 
