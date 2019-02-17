@@ -20,7 +20,7 @@ function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
 
 
     for (var i = 0; i < users[userNum].products.length; i++) {
-        addElement(addElement(users[userNum].name,"p"),"div",addElement(users[userNum].products[i],"p"));
+        addElement(addElement(addElement(users[userNum].name,"p"),"div",addElement(users[userNum].products[i],"p")),"div");
         //addElement(addElement(users[userNum].products[i],"p"),"div");
 
     }
@@ -41,11 +41,13 @@ function addElement (content,tag,content2) {
             newDiv.appendChild(content2);
         }
     }
-    newDiv.className = "users";
-
+    if("div"===tag) {
+        newDiv.className = "users";
+        var currentDiv = document.getElementsByClassName("elements");
+        currentDiv[0].appendChild(newDiv);
+    }
     // add the newly created element and its content into the DOM
-    var currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
+
     return newDiv;
 }
 
