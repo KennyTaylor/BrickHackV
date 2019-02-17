@@ -11,13 +11,14 @@ var tokens = new Array();
 var dictionary = new Map();
 
 
+
 //Main method
 
     var STAGE = {
         ACTIVATED: 1,
         DEACTIVATED: 2
     };
-    // testHashes();
+    //testHashes();
 
     function testHashes(){
         var string1 = new String("Hey");
@@ -33,12 +34,13 @@ var dictionary = new Map();
     function generateHashes() {
 
         var counter = 0;
-        var types = Array("SVK", "CRN", "WDD");
+        var types = Array("SVK");//, "CRN", "WDD");
         for (var i = 0; i < types.length; i++) {
-            for (var j = 0; j < 10; j++) {
-                tokens[counter] = counter.toString(16)+ "["+ types[i]+"]" +  Math.random(1000,5000).toString(16);
+            for (var j = 0; j < 1; j++) {
+                tokens[counter] = counter.toString(16)+ "["+ types[i]+"]" +  (Math.floor(Math.random()*4000)+1000).toString(16);
                 console.log(tokens[counter]);
                 counter++;
+                console.log("random");
             }
         }
         return tokens;
@@ -58,7 +60,7 @@ var dictionary = new Map();
         var tokes = the_tokens; //Returns an array
 
         for (var i = 0; i < tokes.length; i++){
-            var numberOfProduct = tokes.slice(0,1);
+            var numberOfProduct = tokes[i];
             var TypeOfProduct = tokes.slice(tokes.indexOf('['), tokes.indexOf(']'));
             console.log(numberOfProduct, TypeOfProduct);
             //new Product()

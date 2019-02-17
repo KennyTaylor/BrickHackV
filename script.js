@@ -1,28 +1,54 @@
 
+
+const randomNumber = 4; // pseudorandom dice roll 1-6
+const e = 3; // euler's constant
+
+
 class User{
     constructor(products, name) {
         this.products = products;
         this.name = name;
     }
 }
-var boisProducts = generateHashes();
 
-var boi = new User(boisProducts,"Ben Shapiro");
-var boi2 = new User(generateHashes(),"Bencil Sharpeniro");
+var boyenames = [
+    "Gil Gigliotti",
+    "Ben Shapiro",
+    "Sherrie Swayne",
+    "Thomas Cotton",
+    "Alexander Jones",
+    "Tameka Tom",
+    "Youre Mom",
+    "Shanti Schwalb",
+    "Thelma Teitelbaum",
+    "Georgene Grady",
+    "H.P. Lovecraft",
+    "Prince Humperdinck",
+    "Elongated Muskrat",
+    "Temika Tatom",
+    "Gayla Gammage",
+    "Wilfred Westberry",
+    "James Jost",
+    "Jenae Jacox",
+    "Geri Gerry",
+    "Abigail Averitt"
+];
 
-var users = [];
-users[0] = boi;
-users[1] = boi2;
 
+
+var bois = [];
+
+for(var i = 0; i < boyenames.length;i++){
+    bois[i] = new User(generateHashes(), boyenames[i]);
+}
 
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
 
 
-    for (var i = 0; i < users[userNum].products.length; i++) {
-        addElement(addElement(addElement(users[userNum].name,"p"),"div",addElement(users[userNum].products[i],"p")),"div");
+    for (var i = 0; i < bois[userNum].products.length; i++) {
+        addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement(bois[userNum].products[i],"p")),"div");
         //addElement(addElement(users[userNum].products[i],"p"),"div");
-
     }
 }
 
@@ -32,7 +58,7 @@ function addElement (content,tag,content2) {
     var newDiv = document.createElement(tag);
     // and give it some content
     if("string" === typeof content) {
-        var newContent = document.createTextNode(content);
+            var newContent = document.createTextNode(content);
         // add the text node to the newly created div
         newDiv.appendChild(newContent);
     } else {
@@ -51,8 +77,8 @@ function addElement (content,tag,content2) {
     return newDiv;
 }
 
-
-tokensToHumanReadableAlsoDocumentObjectShit(1);
-tokensToHumanReadableAlsoDocumentObjectShit(0);
-parseTokens(boi.products);
-
+for(var i=0;i<boyenames.length;i++) {
+    tokensToHumanReadableAlsoDocumentObjectShit(i);
+}
+//tokensToHumanReadableAlsoDocumentObjectShit(1);
+//parseTokens(boi.products);
