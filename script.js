@@ -61,6 +61,9 @@ var bois = [];
 for(var i = 0; i < boyenames.length;i++) {
     bois[i] = new User(new Array(), boyenames[i]);
     //insert("string",bois[i].name); // mySQL magic happens here
+    //
+    // insert(bois[i].name); // mySQL magic happens here
+
 
 }
 bois[0].products = ["SVK1","SVK2"]; // replacing a database access assuming we get the api set up
