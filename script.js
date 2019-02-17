@@ -61,7 +61,7 @@ var bois = [];
 for(var i = 0; i < boyenames.length;i++) {
     bois[i] = new User(new Array(), boyenames[i]);
     //insert("string",bois[i].name); // mySQL magic happens here
-}\
+}
 
 bois[0].products = ["WDD1","SVK3","SVK4","SVK11"];// replacing a database access assuming we get the api set up (dont have the api key as of 8:10am sunday
 bois[1].products = ["SVK1","SVK2","WDD10","WDD10"];
@@ -104,7 +104,6 @@ function scoringBois(userNum) {
     for(var i=0;i<bois[userNum].products.length-marijuanaSkore;i++){
         alcoholScore=alcoholScore+"🍺";
     }
-<<<<<<< Updated upstream
     addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcohol: "+alcoholScore+"  Weed: "+marijuanaScore,"p")),"div");
 
 }
@@ -112,7 +111,6 @@ function scoringBois(userNum) {
 //stolen (ish) code from mozilla developer thing
 function addElement (content,tag,content2,clasName) {
     // create a new div element
-=======
     addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcohol: "+alcoholScore+" Weed: "+marijuanaScore,"p")),"div");
 
 }
@@ -146,18 +144,15 @@ var swap = function(arr, a, b) {
 
 
     for (var i = 0; i < bois.length; i++) {
-
-<<<<<<< Updated upstream
+/* // failed click listener
 var users = document.getElementsByClassName("users");
 for(var i = 0;i<users.length;i++){
     users[i].addEventListener('click', function(){console.log("click")}
         //tokensToHumanReadableAlsoDocumentObjectShit(i)
     );
-=======
     scoringBois(i);
     //tokensToHumanReadableAlsoDocumentObjectShit(i);
->>>>>>> Stashed changes
-}
+}*/
 
 
 /*
