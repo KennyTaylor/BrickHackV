@@ -66,20 +66,20 @@ for(var i = 0; i < boyenames.length;i++) {
 
 
 }
-bois[0].products = ["SVK1","SVK2","WDD7","WDD8"]; // replacing a database access assuming we get the api set up
-bois[1].products = ["WDD1","SVK3","SVK4","SVK11"];
-bois[2].products = ["SVK5","WDD2"];
-bois[3].products = ["SVK6"];
-bois[4].products = ["SVK7","SVK8"];
-bois[5].products = ["SVK9","WDD3"];
-bois[6].products = ["SVK9"];
-bois[7].products = ["SVK10"];
-bois[8].products = ["SVK8"];
-bois[9].products = ["SVK9"];
-bois[10].products = ["SVK10"];
-bois[11].products = ["SVK8"];
-bois[12].products = ["SVK9"];
-bois[13].products = ["SVK10"];
+bois[0].products = ["SVK4f301","SVK4348c2","WDD031c7","WDD255a8"]; // replacing a database access assuming we get the api set up
+bois[1].products = ["WDD08c231","SVK93b13","SVKcd234","SVKc29611"];
+bois[2].products = ["SVK23085","WDD4c8d2"];
+bois[3].products = ["SVK23086"];
+bois[4].products = ["SVKa3a7","SVK23a58"];
+bois[5].products = ["SVK31c29","WDD9d238c3"];
+bois[6].products = ["SVK93b19"];
+bois[7].products = ["SVK034a10"];
+bois[8].products = ["SVKd09c8"];
+bois[9].products = ["SVKdc239"];
+bois[10].products = ["SVK240810"];
+bois[11].products = ["SVKc3548"];
+bois[12].products = ["SVKd0239"];
+bois[13].products = ["SVKc83410"];
 
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
@@ -106,7 +106,7 @@ function scoringBois(userNum) {
     for(var i=0;i<bois[userNum].products.length;i++){
         alcoholScore=alcoholScore+"🍺";
     }
-    addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Alcohol: "+alcoholScore+"  Weed: "+marijuanaScore,"p")),"div");
+    addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Liquor: "+alcoholScore+"  Marijuana: "+marijuanaScore,"p")),"div");
 
 }
 
