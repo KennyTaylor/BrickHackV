@@ -47,3 +47,44 @@ td.statBox{
 td.nameBox{
     width: 50%;
 }
+
+
+div.page-content {
+    height: max-content;
+}
+div.elements{
+    height: 100%;
+    border-radius: 5px;
+    margin: 0;
+}
+div.users{
+    margin: 40px 0 0 0;
+    background-color:#a23;
+}
+.users div{
+    background-color: #F98728;
+    border-radius: 300px;
+    text-align: center;
+    margin: 10%;
+    padding: 2em 0;
+    height: 2em;
+
+}
+div.users p{
+    width: 100%;
+    display: inline-block !important;
+    vertical-align: middle;
+    text-align:center;
+    margin: 0;
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body{
+        font-size: 48px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body{
+        font-size: 48px;
+    }
+}

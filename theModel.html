@@ -3,84 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>The App</title>
-    <script src="tokenGenerator.js"></script>
+    <script type=src="tokenGenerator.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-    body{
-        background-color: #d4d4d4;
-    }
-    div.page-content {
-        height: max-content;
-         }
-    div.elements{
-        height: 100%;
-        background-color: #d4d4d4;
-        border-radius: 5px;
-        margin: 0;
-    }
-    div.users{
-        margin: 40px 0 0 0;
-        background-color:#a23;
-    }
-    .users div{
-        background-color: #F98728;
-        border-radius: 300px;
-        text-align: center;
-        margin: 10%;
-        padding: 2em 0;
-        height: 2em;
-
-    }
-    div.users p{
-        width: 100%;
-        display: inline-block !important;
-        vertical-align: middle;
-        text-align:center;
-        margin: 0;
-    }
-
-
-</style>
-<script>
-
-
-
-    function fr(parent_tag, content){
-
-        if (content){
-            container_arr = document.getElementsByTagName('user');
-            el = container_arr.getElementsByTagName('ol').appendChild(
-                document.createElement('li',document.createTextNode(""))
-            );
-        } else{
-
-        }
-
-    }
-    // container_arr = document.getElementsByTagName('user');
-    // container_arr.getElementsByTagName('ol').appendChild(
-    //     document.createElement('li',document.createTextNode(""))
-    // );
-
-</script>
 <body>
 
 <div class="page-content">
 
-        <div class="elements">
+        <div style="background-color:#a23;" class="elements">
             <h1></h1>
             <!--Users name-->
             <div class="users">
-                    <h1>Summary of {User}</h1>
-
-                    <div>
-                        <p>Ben Shapiro</p>
-                        <p>234k2nj34234n</p>
-                    </div>
-                    <div>
-                        <p>Sir thomas</p>
-                        <p>4234235n235k</p>
-                     </div>
+                    <h1>Summary of {The_User}</h1>
             </div>
         </div>
 
