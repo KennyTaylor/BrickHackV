@@ -13,13 +13,11 @@ var dictionary = new Map();
 
 //Main method
 
-function main() {
     var STAGE = {
         ACTIVATED: 1,
         DEACTIVATED: 2
     };
     // testHashes();
-    generateHashes();
 
     function testHashes(){
         var string1 = new String("Hey");
@@ -59,8 +57,6 @@ function main() {
     //     return hash;
     // }
 
-};
-main();
 //Tester function that popullates the array
 
 
