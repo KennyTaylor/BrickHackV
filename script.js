@@ -1,29 +1,28 @@
-
-
 const randomNumber = 4; // pseudorandom dice roll 1-6
 const e = 3; // euler's constant
 
 
-/*
 var db = openDatabase("my.db", "1.0","Database time",100);
-db.transaction(function(tx) {
+var createBOIS = function() {
+    db.transaction(function (tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS bois (token string primary key, user text)");
     });
+}
 
 var insert = function(token,user){
     db.transaction(function(tx){
         tx.executeSql("INSERT INTO bois (token,user) VALUES (?,?)", [token,user]);
 
     });
-}
+};
 
 var delyeet = function(){
     db.transaction(function(tx){
         tx.executeSql("DROP TABLE bois") // obligatory epic games reference
     });
-}
+};
 //delyeet(); // Good ol' johnny tables;--
-*/
+
 class User{
     constructor(products, name) {
         this.products = products;
@@ -53,22 +52,21 @@ var boyenames = [
     "Geri Gerry",
     "Abigail Averitt"
 ];
-
-
+//delyeet()
+createBOIS();
 
 var bois = [];
 // getting the bois ready
 for(var i = 0; i < boyenames.length;i++) {
-    bois[i] = new User(new Array(), boyenames[i]);
+    bois[i] = new User([], boyenames[i]);
     //insert("string",bois[i].name); // mySQL magic happens here
-    //
     // insert(bois[i].name); // mySQL magic happens here
 
-
 }
+
 bois[0].products = ["SVK4f301","SVK4348c2","WDD031c7","WDD255a8"]; // replacing a database access assuming we get the api set up
 bois[1].products = ["WDD08c231","SVK93b13","SVKcd234","SVKc29611"];
-bois[2].products = ["SVK23085","WDD4c8d2"];
+bois[2].products = ["SVK23085","WDD4c8d2","SVK93b13","SVKcd234"];
 bois[3].products = ["SVK23086"];
 bois[4].products = ["SVKa3a7","SVK23a58"];
 bois[5].products = ["SVK31c29","WDD9d238c3"];
@@ -80,6 +78,17 @@ bois[10].products = ["SVK240810"];
 bois[11].products = ["SVKc3548"];
 bois[12].products = ["SVKd0239"];
 bois[13].products = ["SVKc83410"];
+
+
+
+// this is a for statement. this for statement does sql magic.
+// if the program works, dont touch this. if it doesnt work, this is the problem
+for(var j = 0; j<bois.length;j++){ // 0 to 13
+    for(var i = 0;i<bois[j].products.length;i++){ //
+        insert(bois[i].products[j],bois[i].name);
+    }
+}
+////sql magic
 
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
