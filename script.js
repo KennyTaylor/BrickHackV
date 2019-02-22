@@ -2,12 +2,12 @@ const randomNumber = 4; // pseudorandom dice roll 1-6
 const e = 3; // euler's constant
 
 
-var db = openDatabase("my.db", "1.0","Database time",100);
+var db = openDatabase("database time", "1.0","Database time",100);
 var createBOIS = function() {
     db.transaction(function (tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS bois (token string primary key, user text)");
     });
-}
+};
 
 var insert = function(token,user){
     db.transaction(function(tx){
@@ -22,6 +22,7 @@ var delyeet = function(){
     });
 };
 //delyeet(); // Good ol' johnny tables;--
+//use for debug n stuff dont forget to comment out
 
 class User{
     constructor(products, name) {
@@ -57,11 +58,8 @@ createBOIS();
 
 var bois = [];
 // getting the bois ready
-for(var i = 0; i < boyenames.length;i++) {
+for(i = 0; i < boyenames.length;i++) {
     bois[i] = new User([], boyenames[i]);
-    //insert("string",bois[i].name); // mySQL magic happens here
-    // insert(bois[i].name); // mySQL magic happens here
-
 }
 
 bois[0].products = ["SVK4f301","SVK4348c2","WDD031c7","WDD255a8"]; // replacing a database access assuming we get the api set up
@@ -83,9 +81,9 @@ bois[13].products = ["SVKc83410"];
 
 // this is a for statement. this for statement does sql magic.
 // if the program works, dont touch this. if it doesnt work, this is the problem
-for(var j = 0; j<bois.length;j++){ // 0 to 13
-    for(var i = 0;i<bois[j].products.length;i++){ //
-        insert(bois[i].products[j],bois[i].name);
+for(j = 0; j<bois.length;j++){ // 0 to 13
+    for(i = 0;i<bois[j].products.length;i++){ //
+        insert(bois[j].products[i],bois[j].name);
     }
 }
 ////sql magic
@@ -103,16 +101,16 @@ function scoringBois(userNum) {
     var marijuanaSkore = 0;
     var alcoholScore = "";
     var marijuanaScore = "";
-    for(var i = 0;i < bois[userNum].products.length;i++){
+    for(i = 0;i < bois[userNum].products.length;i++){
         if(bois[userNum].products[i].substring(0,1) === "W"){
             marijuanaSkore++;
         }
     }
-    for(var i = 0;i<marijuanaSkore;i++){
+    for(i = 0;i<marijuanaSkore;i++){
         marijuanaScore=marijuanaScore+"🍁";
 
     }
-    for(var i=0;i<bois[userNum].products.length;i++){
+    for(i=0;i<bois[userNum].products.length;i++){
         alcoholScore=alcoholScore+"🍺";
     }
     addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Liquor: "+alcoholScore+"  Marijuana: "+marijuanaScore,"p")),"div");
