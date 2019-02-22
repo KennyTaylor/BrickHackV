@@ -1,6 +1,6 @@
 # Brickhack social app
 
-One Paragraph of project description goes here
+for a description, see [the devpost page](https://devpost.com/software/ui-for-constellation-brands-products)
 
 ## Getting Started
 
