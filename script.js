@@ -118,7 +118,7 @@ function scoringBois(userNum) {
 }
 
 //stolen (ish) code from mozilla developer thing
-function addElement (content,tag,content2,clasName) {
+function addElement (content,tag,content2) {
     // create a new div element
     var newDiv = document.createElement(tag);
     // and give it some content
