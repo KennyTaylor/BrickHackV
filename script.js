@@ -81,8 +81,8 @@ bois[13].products = ["SVKc83410"];
 
 // this is a for statement. this for statement does sql magic.
 // if the program works, dont touch this. if it doesnt work, this is the problem
-for(j = 0; j<bois.length;j++){ // 0 to 13
-    for(i = 0;i<bois[j].products.length;i++){ //
+for(let j = 0; j<bois.length;j++){ // 0 to 13
+    for(let i = 0;i<bois[j].products.length;i++){ //
         insert(bois[j].products[i],bois[j].name);
     }
 }
@@ -90,7 +90,7 @@ for(j = 0; j<bois.length;j++){ // 0 to 13
 
 
 function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
-    for (var i = 0; i < bois[userNum].products.length; i++) {
+    for (let i = 0; i < bois[userNum].products.length; i++) {
         addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement(bois[userNum].products[i],"p"),"users-data"),"div");
         //addElement(addElement(users[userNum].products[i],"p"),"div");
 
@@ -98,19 +98,19 @@ function tokensToHumanReadableAlsoDocumentObjectShit(userNum) {
 }
 
 function scoringBois(userNum) {
-    var marijuanaSkore = 0;
-    var alcoholScore = "";
-    var marijuanaScore = "";
-    for(i = 0;i < bois[userNum].products.length;i++){
+    let marijuanaSkore = 0;
+    let alcoholScore = "";
+    let marijuanaScore = "";
+    for(let i = 0;i < bois[userNum].products.length;i++){
         if(bois[userNum].products[i].substring(0,1) === "W"){
             marijuanaSkore++;
         }
     }
-    for(i = 0;i<marijuanaSkore;i++){
+    for(let i = 0;i<marijuanaSkore;i++){
         marijuanaScore=marijuanaScore+"🍁";
 
     }
-    for(i=0;i<bois[userNum].products.length;i++){
+    for(let i = 0;i<bois[userNum].products.length;i++){
         alcoholScore=alcoholScore+"🍺";
     }
     addElement(addElement(addElement(bois[userNum].name,"p"),"div",addElement("Liquor: "+alcoholScore+"  Marijuana: "+marijuanaScore,"p")),"div");
@@ -118,12 +118,12 @@ function scoringBois(userNum) {
 }
 
 //stolen (ish) code from mozilla developer thing
-function addElement (content,tag,content2) {
+function addElement (content,tag,content2) {// had a parameter clasName here, removed it bc it was unused but i feel like we were using it for something
     // create a new div element
-    var newDiv = document.createElement(tag);
+    let newDiv = document.createElement(tag);
     // and give it some content
     if("string" === typeof content) {
-            var newContent = document.createTextNode(content);
+            let newContent = document.createTextNode(content);
         // add the text node to the newly created div
         newDiv.appendChild(newContent);
     } else {
@@ -134,7 +134,7 @@ function addElement (content,tag,content2) {
     }
     if(tag === "div") {
             newDiv.className = "users";
-            var currentDiv = document.getElementsByClassName("elements");
+            let currentDiv = document.getElementsByClassName("elements");
             currentDiv[0].appendChild(newDiv);
     }
     // add the newly created element and its content into the DOM
